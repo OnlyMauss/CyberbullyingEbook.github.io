@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cyberbullying — What it is & How to stop it</title>
   <style>
+      
     :root{--accent:#2b6cb0;--bg:#fafafa;--card:#ffffff;--muted:#666}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
     body{background:linear-gradient(180deg,#f6fbff, #ffffff);color:#111}
@@ -50,8 +51,25 @@
     line-height: 1.5;
   }
 }
+      /* Page Entry Animation */
+    body {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }    
+    body.loaded {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 </style>
 </head>
+<script>
+    window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+    });
+</script>
+
 <body>
   <div class="wrap">
     <header>
@@ -194,7 +212,7 @@ Thank you,
       </aside>
     
 <section class="card">
-<h2>6. Types of Cyberbullying</h2>
+<h2>Types of Cyberbullying</h2>
 <p>Cyberbullying can happen in different forms. Some common types include:</p>
 <ul>
 <li><strong>Harassment:</strong> Sending repeated, offensive messages.</li>
@@ -206,7 +224,7 @@ Thank you,
 </section>
 
 <section class="card">
-<h2>7. How Cyberbullying Affects Mental Health</h2>
+<h2>How Cyberbullying Affects Mental Health</h2>
 <p>Cyberbullying can affect mental health in many ways:</p>
 <ul>
 <li>Increased stress and anxiety</li>
@@ -219,7 +237,7 @@ Thank you,
 </section>
 
 <section class="card">
-<h2>8. What to Do If You See Someone Being Cyberbullied</h2>
+<h2>What to Do If You See Someone Being Cyberbullied</h2>
 <p>You can help others stay safe online:</p>
 <ul>
 <li><strong>Do not join in</strong> or encourage bullying behavior.</li>
@@ -231,7 +249,7 @@ Thank you,
 </section>
 
 <section class="card">
-<h2>9. Safe Online Behavior Tips</h2>
+<h2>Safe Online Behavior Tips</h2>
 <ul>
 <li>Keep your accounts private.</li>
 <li>Use strong passwords and change them regularly.</li>
@@ -284,35 +302,6 @@ Thank you,
     function shareText(){
       const url = location.href; navigator.clipboard.writeText(url).then(()=>alert('Link copied'))
     }
-  
-// --- ADDITIONAL QUIZ QUESTIONS ---
-quizQuestions.push(
-    {
-        question: "Which of these is an example of cyberbullying?",
-        answers: ["Sending supportive messages", "Sharing someone's private info", "Helping someone with homework"],
-        correct: 1
-    },
-    {
-        question: "What should you do if someone is threatening you online?",
-        answers: ["Keep replying", "Block and report them", "Send them personal information"],
-        correct: 1
-    },
-    {
-        question: "What is the safest password?",
-        answers: ["123456", "yourname2024", "H9f!32LpA#"],
-        correct: 2
-    },
-    {
-        question: "What is doxxing?",
-        answers: ["Posting a meme", "Leaking someone's private info online", "Deleting old messages"],
-        correct: 1
-    },
-    {
-        question: "Who should you talk to if you're cyberbullied?",
-        answers: ["A trusted adult", "Nobody", "The bully"],
-        correct: 0
-    }
-);
-</script>
+  </script>
 </body>
 </html>
