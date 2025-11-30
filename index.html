@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cyberbullying — What it is & How to stop it</title>
@@ -31,7 +32,25 @@
     .small{font-size:14px;color:var(--muted)}
     .quiz .question{margin:12px 0}
     .hidden{display:none}
-  </style>
+  
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .card {
+    margin: 10px 0;
+    padding: 12px;
+  }
+  p, li {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+</style>
 </head>
 <body>
   <div class="wrap">
