@@ -2,306 +2,385 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cyberbullying — What it is & How to stop it</title>
-  <style>
-      
-    :root{--accent:#2b6cb0;--bg:#fafafa;--card:#ffffff;--muted:#666}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    body{background:linear-gradient(180deg,#f6fbff, #ffffff);color:#111}
-    .wrap{max-width:980px;margin:32px auto;padding:20px}
-    header{display:flex;align-items:center;gap:18px}
-    .logo{width:68px;height:68px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px}
-    h1{margin:0;font-size:clamp(20px,3vw,28px)}
-    p.lead{color:var(--muted);margin:6px 0 18px}
-    nav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-    nav a{background:rgba(43,108,176,0.08);padding:8px 12px;border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600}
-    main{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    @media(max-width:880px){main{grid-template-columns:1fr}}
-    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(10,20,40,0.06)}
-    h2{margin-top:0}
-    ul.check{list-style:none;padding:0;margin:8px 0 16px}
-    ul.check li{position:relative;padding-left:28px;margin:10px 0}
-    ul.check li:before{content:'✓';position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
-    .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    @media(max-width:600px){.tips{grid-template-columns:1fr}}
-    .tip{background:#fbfeff;padding:12px;border-radius:10px;border:1px solid rgba(43,108,176,0.06)}
-    footer{margin-top:18px;color:var(--muted);font-size:13px}
-    .download{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
-    .report{background:#e53e3e;color:#fff;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700}
-    .small{font-size:14px;color:var(--muted)}
-    .quiz .question{margin:12px 0}
-    .hidden{display:none}
-  
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-  header h1 {
-    font-size: 22px;
-    text-align: center;
-  }
-  .card {
-    margin: 10px 0;
-    padding: 12px;
-  }
-  p, li {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-      /* Page Entry Animation */
-    body {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }    
-    body.loaded {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cyberbullying — What it is & How to stop it</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff0050; /* TikTok pink */
+            --secondary: #00f2ea; /* TikTok teal */
+            --bg: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%); /* Dark gradient background */
+            --card: #1a1a1a; /* Dark card background */
+            --muted: #b0b0b0; /* Lighter muted text for dark theme */
+            --shadow: 0 8px 32px rgba(255, 0, 80, 0.3);
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: var(--bg);
+            color: #f0f0f0; /* Light text for dark background */
+            overflow-x: hidden;
+        }
+        .wrap {
+            max-width: 980px;
+            margin: 32px auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            text-align: center;
+            flex-direction: column;
+        }
+        .logo {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 22px;
+            box-shadow: var(--shadow);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        h1 {
+            margin: 0;
+            font-size: clamp(24px, 4vw, 32px);
+            color: var(--accent);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p.lead {
+            color: var(--muted);
+            margin: 6px 0 18px;
+            font-size: 16px;
+        }
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+            justify-content: center;
+        }
+        nav a {
+            background: rgba(255, 0, 80, 0.1);
+            padding: 10px 16px;
+            border-radius: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 0, 80, 0.1);
+        }
+        nav a:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+        main {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 20px;
+        }
+        @media(max-width:880px) {
+            main { grid-template-columns: 1fr; }
+        }
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 24px;
+        }
+        ul.check {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 16px;
+        }
+        ul.check li {
+            position: relative;
+            padding-left: 32px;
+            margin: 12px 0;
+        }
+        ul.check li:before {
+            content: '🔥';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 18px;
+        }
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media(max-width:600px) {
+            .tips { grid-template-columns: 1fr; }
+        }
+        .tip {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%); /* Darker tip background */
+            padding: 14px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 0, 80, 0.1);
+        }
+        footer {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+        .download {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .download:hover {
+            transform: scale(1.1);
+        }
+        .report {
+            background: #e53e3e;
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .report:hover {
+            transform: scale(1.1);
+        }
+        .small {
+            font-size: 14px;
+            color: var(--muted);
+        }
+        .quiz .question {
+            margin: 12px 0;
+            font-weight: 600;
+        }
+        .quiz button {
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 0, 80, 0.2);
+        }
+        .quiz button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(255, 0, 80, 0.3);
+        }
+        .quiz button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 10px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header h1 { font-size: 24px; text-align: center; }
+            .card { margin: 10px 0; padding: 16px; }
+            p, li { font-size: 16px; line-height: 1.5; }
+        }
+        /* Page Entry Animation */
+        body {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        body.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <script>
     window.addEventListener("load", () => {
         document.body.classList.add("loaded");
     });
+
+    function answer(btn, correct) {
+        const next = btn.parentNode.nextElementSibling;
+        if (!next) return;
+        next.classList.remove('hidden');
+        next.textContent = correct ? 'Correct — good job!' : 'Incorrect — try again.';
+        // Disable buttons after answering
+        const buttons = btn.parentNode.querySelectorAll('button');
+        buttons.forEach(b => b.disabled = true);
+    }
 </script>
 
 <body>
-  <div class="wrap">
-    <header>
-    <div style="background:#ffffffaa; padding:8px 12px; border-radius:8px; margin-bottom:10px; font-size:14px; font-weight:bold;">
-      Name: Vatov Maximilian &nbsp;&nbsp; | &nbsp;&nbsp; Group: P2511</div>
-      <div class="logo">CB</div>
-      <div>
-        <h1>Cyberbullying — What it is & How to stop it</h1>
-        <p class="lead">A short e‑book / guide to understand cyberbullying, protect your information and report abuse.</p>
-      </div>
-    </header>
-
-    
-
-    <nav>
-      <a href="#what">What is it?</a>
-      <a href="#effects">Effects</a>
-      <a href="#report">Report</a>
-      <a href="#protect">Protect info</a>
-      <a href="#stop">How to stop it</a>
-    </nav>
-
-    <main>
-      <section>
-        <article id="what" class="card">
-          <h2>What is cyberbullying?</h2>
-          <p>Cyberbullying is using digital devices (social media, messaging, email, forums, games) to harass, threaten, embarrass or exclude another person. It includes sending hurtful messages, spreading rumours, sharing private images without consent, creating fake profiles, or encouraging others to target someone.</p>
-          <h3>Common forms</h3>
-          <ul class="check">
-            <li>Harassing messages and insults</li>
-            <li>Sharing private photos or sensitive information</li>
-            <li>Impersonation and fake accounts</li>
-            <li>Exclusion from groups or online shaming</li>
-          </ul>
-        </article>
-
-        <article id="effects" class="card" style="margin-top:16px">
-          <h2>What are the effects of cyberbullying?</h2>
-          <p>Victims can feel stressed, anxious, depressed, lose self‑esteem, avoid school or social situations, and in extreme cases think about self‑harm. Cyberbullying can have long‑lasting emotional and social consequences because content can spread quickly and persist online.</p>
-          <div style="margin-top:10px" class="small">If you or someone you know shows signs of severe distress, contact local emergency services or a trusted adult immediately.</div>
-        </article>
-
-        <article id="report" class="card" style="margin-top:16px">
-          <h2>Why is it important to report the problem?</h2>
-          <p>Reporting helps stop the abuse, protects others, and creates an official record. Platforms can remove content and suspend accounts. Reporting also connects victims to support and can be useful if further legal or school action is needed.</p>
-          <div style="margin-top:10px">
-            <strong>How to report:</strong>
-            <ol>
-              <li>Take screenshots and save messages.</li>
-              <li>Use the platform's report feature.</li>
-              <li>Tell a trusted adult, school authority or employer.</li>
-              <li>Contact local law enforcement for threats or illegal content.</li>
-            </ol>
-          </div>
-        </article>
-
-        <article id="protect" class="card" style="margin-top:16px">
-          <h2>How do I prevent my personal info from being used?</h2>
-          <div class="tips" style="margin-top:8px">
-            <div class="tip">
-              <strong>Privacy settings</strong>
-              <div class="small">Lock your accounts to friends only, review what is visible and remove old posts containing sensitive info.</div>
+    <div class="wrap">
+        <header>
+            <div style="background:#ffffffaa; padding:8px 12px; border-radius:20px; margin-bottom:10px; font-size:14px; font-weight:bold;">
+                Name: Vatov Maximilian &nbsp;&nbsp; | &nbsp;&nbsp; Group: P2511
             </div>
-            <div class="tip">
-              <strong>Think before sharing</strong>
-              <div class="small">Don't post private photos, addresses, phone numbers or passwords.</div>
+            <div class="logo">CB</div>
+            <div>
+                <h1>Cyberbullying — What it is & How to stop it</h1>
+                <p class="lead">A short e‑book / guide to understand cyberbullying, protect your information and report abuse. 🚀</p>
             </div>
-            <div class="tip">
-              <strong>Use strong passwords</strong>
-              <div class="small">Use unique passwords and enable two‑factor authentication for important accounts.</div>
-            </div>
-            <div class="tip">
-              <strong>Be careful with strangers</strong>
-              <div class="small">Check unknown friend requests and never accept links or files from untrusted users.</div>
-            </div>
-          </div>
-        </article>
+        </header>
 
-        <article id="stop" class="card" style="margin-top:16px">
-          <h2>How can I stop cyberbullying?</h2>
-          <p>Practical steps you can do right now:</p>
-          <ul>
-            <li>Block the bully and mute notifications.</li>
-            <li>Save evidence (screenshots, URLs, dates).</li>
-            <li>Report the profile and offensive posts to the platform.</li>
-            <li>Tell a parent, teacher, or trusted friend.</li>
-            <li>Seek professional help if the impact is strong.</li>
-          </ul>
+        <nav>
+            <a href="#what">What is it? 🤔</a>
+            <a href="#effects">Effects 😔</a>
+            <a href="#report">Report 🚨</a>
+            <a href="#protect">Protect info 🔒</a>
+            <a href="#stop">How to stop it 🛡️</a>
+        </nav>
 
-          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="download" id="downloadBtn" href="#">Download e‑book</a>
-            <a class="report" id="reportBtn" href="#">Quick report checklist</a>
-          </div>
-        </article>
+        <main>
+            <section>
+                <article id="what" class="card">
+                    <h2>What is cyberbullying?</h2>
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Illustration of online harassment">
+                    <p>Cyberbullying is using digital devices (social media, messaging, email, forums, games) to harass, threaten, embarrass or exclude another person. It includes sending hurtful messages, spreading rumours, sharing private images without consent, creating fake profiles, or encouraging others to target someone.</p>
+                    <h3>Common forms</h3>
+                    <ul class="check">
+                        <li>Harassing messages and insults</li>
+                        <li>Sharing private photos or sensitive information</li>
+                        <li>Impersonation and fake accounts</li>
+                        <li>Exclusion from groups or online shaming</li>
+                    </ul>
+                </article>
 
-        <article class="card" style="margin-top:16px">
-          <h2>Short quiz — check your knowledge</h2>
-          <div class="quiz">
-            <div class="question">1) Is sharing someone's private photo without permission a form of cyberbullying?</div>
-            <div><button onclick="answer(this,true)">Yes</button> <button onclick="answer(this,false)">No</button></div>
-            <div id="q1" class="small hidden">Correct — it's a serious violation and can be illegal.</div>
+                <article id="effects" class="card" style="margin-top:16px">
+                    <h2>What are the effects of cyberbullying?</h2>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Person looking stressed from cyberbullying">
+                    <p>Victims can feel stressed, anxious, depressed, lose self‑esteem, avoid school or social situations, and in extreme cases think about self‑harm. Cyberbullying can have long‑lasting emotional and social consequences because content can spread quickly and persist online.</p>
+                    <div style="margin-top:10px" class="small">If you or someone you know shows signs of severe distress, contact local emergency services or a trusted adult immediately.</div>
+                </article>
 
-            <div class="question">2) Should you ever share your password with friends?</div>
-            <div><button onclick="answer(this,false)">No</button> <button onclick="answer(this,true)">Yes</button></div>
-            <div id="q2" class="small hidden">Correct — never share passwords.</div>
-          </div>
-        </article>
+                <article id="report" class="card" style="margin-top:16px">
+                    <h2>Why is it important to report the problem?</h2>
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Reporting cyberbullying online">
+                    <p>Reporting helps stop the abuse, protects others, and creates an official record. Platforms can remove content and suspend accounts. Reporting also connects victims to support and can be useful if further legal or school action is needed.</p>
+                    <div style="margin-top:10px">
+                        <strong>How to report:</strong>
+                        <ol>
+                            <li>Take screenshots and save messages.</li>
+                            <li>Use the platform's report feature.</li>
+                            <li>Tell a trusted adult, school authority or employer.</li>
+                            <li>Contact local law enforcement for threats or illegal content.</li>
+                        </ol>
+                    </div>
+                </article>
 
-      </section>
+                <article id="protect" class="card" style="margin-top:16px">
+                    <h2>How do I prevent my personal info from being used?</h2>
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Protecting personal information online">
+                    <div class="tips" style="margin-top:8px">
+                        <div class="tip">
+                            <strong>Privacy settings</strong>
+                            <div class="small">Lock your accounts to friends only, review what is visible and remove old posts containing sensitive info.</div>
+                        </div>
+                        <div class="tip">
+                            <strong>Think before sharing</strong>
+                            <div class="small">Don't post private photos, addresses, phone numbers or passwords.</div>
+                        </div>
+                        <div class="tip">
+                            <strong>Use strong passwords</strong>
+                            <div class="small">Use unique passwords and enable two‑factor authentication for important accounts.</div>
+                        </div>
+                        <div class="tip">
+                            <strong>Be careful with strangers</strong>
+                            <div class="small">Check unknown friend requests and never accept links or files from untrusted users.</div>
+                        </div>
+                    </div>
+                </article>
 
-      <aside>
-        <div class="card">
-          <h3>Quick resources</h3>
-          <ul>
-            <li><strong>Emergency:</strong> local emergency number</li>
-            <li><strong>Helplines:</strong> school counselor, mental health services</li>
-            <li><strong>Evidence tips:</strong> screenshots, saved links, exported chats</li>
-          </ul>
-          <hr />
-          <h4>Share</h4>
-          <p class="small">Share this guide with someone who might need it.</p>
-          <div style="display:flex;gap:8px;margin-top:8px">
-            <button onclick="shareText()">Copy link</button>
-            <button onclick="print()">Print</button>
-          </div>
-        </div>
+                <article id="stop" class="card" style="margin-top:16px">
+                    <h2>How can I stop cyberbullying?</h2>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Stopping cyberbullying with support">
+                    <p>Practical steps you can do right now:</p>
+                    <ul>
+                        <li>Block the bully and mute notifications.</li>
+                        <li>Save evidence (screenshots, URLs, dates).</li>
+                        <li>Report the profile and offensive posts to the platform.</li>
+                        <li>Tell a parent, teacher, or trusted friend.</li>
+                        <li>Seek professional help if the impact is strong.</li>
+                    </ul>
 
-        <div class="card" style="margin-top:14px">
-          <h3>Contact / Report template</h3>
-          <p class="small">Use this short template when reporting to a school, platform or parent:</p>
-          <textarea id="template" style="width:100%;height:120px;border-radius:8px;padding:8px">Hello,
+                    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+                        <a class="download" id="downloadBtn" href="#">Download e‑book 📥</a>
+                        <a class="report" id="reportBtn" href="#">Quick report checklist 🚨</a>
+                    </div>
+                </article>
 
-I want to report harassment I experienced on [platform]. The user [username or link] sent the following messages/posts: [paste screenshots or text]. This began on [date]. I request an investigation and removal of the content. I am willing to provide evidence.
+                <article class="card" style="margin-top:16px">
+                    <h2>Short quiz — check your knowledge</h2>
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Quiz on cyberbullying knowledge">
+                    <div class="quiz">
+                        <div class="question">1) Is sharing someone's private photo without permission a form of cyberbullying?</div>
+                        <div><button onclick="answer(this,true)">Yes</button> <button onclick="answer(this,false)">No</button></div>
+                        <div id="q1" class="small hidden">Correct — it's a serious violation and can be illegal.</div>
 
-Thank you,
-[Your name]</textarea>
-          <div style="margin-top:8px;display:flex;gap:8px"><button onclick="copyTemplate()">Copy</button><button onclick="downloadTemplate()">Download</button></div>
-        </div>
+                        <div class="question">2) Should you ever share your password with friends?</div>
+                        <div><button onclick="answer(this,false)">No</button> <button onclick="answer(this,true)">Yes</button></div>
+                        <div id="q2" class="small hidden">Correct — never share passwords.</div>
 
-      </aside>
-    
-<section class="card">
-<h2>Types of Cyberbullying</h2>
-<p>Cyberbullying can happen in different forms. Some common types include:</p>
-<ul>
-<li><strong>Harassment:</strong> Sending repeated, offensive messages.</li>
-<li><strong>Impersonation:</strong> Pretending to be someone else online.</li>
-<li><strong>Doxxing:</strong> Sharing private information without permission.</li>
-<li><strong>Exclusion:</strong> Leaving someone out on purpose from online groups.</li>
-<li><strong>Cyberstalking:</strong> Repeatedly monitoring someone's online activity.</li>
-</ul>
-</section>
+                        <div class="question">3) Is cyberbullying only harmful if it happens in person?</div>
+                        <div><button onclick="answer(this,false)">No</button> <button onclick="answer(this,true)">Yes</button></div>
+                        <div id="q3" class="small hidden">Correct — cyberbullying can be just as harmful online.</div>
 
-<section class="card">
-<h2>How Cyberbullying Affects Mental Health</h2>
-<p>Cyberbullying can affect mental health in many ways:</p>
-<ul>
-<li>Increased stress and anxiety</li>
-<li>Difficulty concentrating in school or work</li>
-<li>Lower self-esteem and confidence</li>
-<li>Sleep problems</li>
-<li>Fear of using social media</li>
-</ul>
-<p>These effects can build up over time and become serious if not addressed.</p>
-</section>
+                        <div class="question">4) Should you block someone who is cyberbullying you?</div>
+                        <div><button onclick="answer(this,true)">Yes</button> <button onclick="answer(this,false)">No</button></div>
+                        <div id="q4" class="small hidden">Correct — blocking helps stop the harassment.</div>
 
-<section class="card">
-<h2>What to Do If You See Someone Being Cyberbullied</h2>
-<p>You can help others stay safe online:</p>
-<ul>
-<li><strong>Do not join in</strong> or encourage bullying behavior.</li>
-<li><strong>Save proof</strong> such as screenshots.</li>
-<li><strong>Report</strong> the bully to the platform.</li>
-<li><strong>Support the victim</strong> by talking to them and showing understanding.</li>
-<li><strong>Tell a trusted adult</strong> if the bullying involves minors.</li>
-</ul>
-</section>
+                        <div class="question">5) Is it okay to spread rumors about someone online if it's just a joke?</div>
+                        <div><button onclick="answer(this,false)">No</button> <button onclick="answer(this,true)">Yes</button></div>
+                        <div id="q5" class="small hidden">Correct — spreading rumors can be a form of cyberbullying.</div>
+                    </div>
+                </article>
 
-<section class="card">
-<h2>Safe Online Behavior Tips</h2>
-<ul>
-<li>Keep your accounts private.</li>
-<li>Use strong passwords and change them regularly.</li>
-<li>Do not share personal photos with strangers.</li>
-<li>Think before posting anything public.</li>
-<li>Avoid online arguments or toxic communities.</li>
-</ul>
-</section>
-
-</main>
-
-    <footer class="small">© CyberGuide • Use this site as an educational resource. It does not replace professional advice.</footer>
-  </div>
-
-  <script>
-    function answer(btn,correct){
-      const next = btn.parentNode.nextElementSibling;
-      if(!next) return;
-      next.classList.remove('hidden');
-      next.textContent = correct ? 'Correct — good job.' : 'Incorrect — try again.';
-    }
-
-    document.getElementById('downloadBtn').addEventListener('click',function(e){
-      e.preventDefault();
-      const title = 'Cyberbullying - What it is and how do I stop it';
-      const content = [];
-      const sections = document.querySelectorAll('main section article');
-      sections.forEach(a=>{
-        const h = a.querySelector('h2')?.innerText || '';
-        const t = a.querySelector('p')?.innerText || '';
-        content.push(h, t, '');
-      });
-      const blob = new Blob([title + '\n\n' + content.join('\n')],{type:'text/plain'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'cyberbullying-guide.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
-
-    document.getElementById('reportBtn').addEventListener('click',function(e){
-      e.preventDefault();
-      alert('Report checklist:\n1) Save screenshots\n2) Block the user\n3) Report to platform\n4) Tell a trusted adult');
-    });
-
-    function copyTemplate(){
-      const t = document.getElementById('template'); navigator.clipboard.writeText(t.value).then(()=>alert('Copied'))
-    }
-    function downloadTemplate(){
-      const t = document.getElementById('template').value; const b = new Blob([t],{type:'text/plain'}); const u=URL.createObjectURL(b); const a=document.createElement('a'); a.href=u; a.download='report-template.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(u);
-    }
-    function shareText(){
-      const url = location.href; navigator.clipboard.writeText(url).then(()=>alert('Link copied'))
-    }
-  </script>
-</body>
-</html>
+                <section class="card">
+                    <h2>Types of Cyberbullying</h2>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Different types of cyberbullying">
+                    <p>Cyberbullying can happen in different forms. Some common types include:</p>
+                    <ul>
+                        <li><strong>Harassment:</strong> Sending repeated, offensive messages.</li>
+                        <li><strong>Impersonation:</strong> Pretending to be someone else online.</li>
+                        <li><strong>Doxxing:</strong> Sharing private information without permission.</li>
+                        <li><strong>Exclusion:</strong> Leaving someone out on purpose from online groups.</li>
+                        <li><strong>Cyberstalk
