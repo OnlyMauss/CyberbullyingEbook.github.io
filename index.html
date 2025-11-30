@@ -50,6 +50,17 @@
     line-height: 1.5;
   }
 }
+      /* Page Entry Animation */
+body {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+body.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 </style>
 </head>
 <body>
